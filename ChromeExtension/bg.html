@@ -1,0 +1,33 @@
+<script type='text/javascript'>
+	var req;
+	var url;
+	chrome.extension.onConnect.addListener(onPortConnect); 
+	
+	function onPortConnect(port) {
+		if(port.name=="port")
+			port.onMessage.addListener(onMessageRecieved);  
+	} 
+
+	function onMessageRecieved(data,port) { 
+		var xhr = new XMLHttpRequest();
+		var url = data.message;
+		//alert(url);
+	   xhr.open("GET", url, true);  
+        xhr.onreadystatechange = function () {  
+          if (xhr.readyState === 4) {  
+	        if (xhr.status === 200) {
+	           resp = xhr.responseText;	
+	           //alert(resp);
+	           resp = eval(resp);
+	           sendBack(port,resp);	  
+	        }
+          }  
+        };  
+        xhr.send(null);
+	} 
+	
+	function sendBack(port,arr){
+		port.postMessage({message: arr}); 
+		
+	}
+</script>

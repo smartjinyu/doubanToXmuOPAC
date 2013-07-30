@@ -1,0 +1,12 @@
+﻿{
+"name": "DoubanToXmuOPAC",
+"version": "2.2",
+"icons": { "128": "xmu_logo_128.png" },
+"description": "在豆瓣显示厦门大学图书馆馆藏信息",
+"permissions": [ "http://210.34.4.28/" ],
+"content_scripts": [ {
+	"matches": ["http://book.douban.com/subject/*" ],
+	"js": ["jquery.js", "doubanToOPAC2.js" ]	
+	} ],
+ "background_page": "bg.html"
+}
