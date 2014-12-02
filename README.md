@@ -11,7 +11,7 @@ doubanToXmuOPAC
 userscript目录下为Firefox GreaseMonkey脚本文件，具体安装试用方法可参考：
 
 	1. 如何安装使用GreaseMonkey：https://addons.mozilla.org/en-US/firefox/addon/748 
-	2. 如何安装GreaseMonkey脚本：http://userscripts.org/scripts/show/46158 
+	2. 如何安装GreaseMonkey脚本：从userscript目录中下载js文件，然后将其拖到firefox中完成安装
 
 ChromeExtension中为Chrome扩展的源代码，具体安装试用可以参考：
 
